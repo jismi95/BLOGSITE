@@ -1,5 +1,5 @@
 <?php
-include_once('config.php');
+include_once('app/config.php');
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 	// Get data 
 	$ID        = isset($_POST['ID']) ? mysqli_real_escape_string($conn, $_POST['ID']) : "";
