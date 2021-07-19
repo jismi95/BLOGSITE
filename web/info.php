@@ -1,5 +1,5 @@
 <?php
-	include_once('config.php');
+	include_once('app/config.php');
 	
 	$sql = "SELECT * FROM `testt_db`.`posts` ;";
 	$get_data_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
