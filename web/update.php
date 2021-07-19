@@ -7,9 +7,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 	$DESCRIPTION  = isset($_POST['DESCRIPTION']) ? mysqli_real_escape_string($conn, $_POST['DESCRIPTION']) : "";
 	$DATE  = isset($_POST['DATE']) ? mysqli_real_escape_string($conn, $_POST['DATE']) : "";
 	// update data 
-	$sql = "UPDATE `testt_db`.`posts` SET TITLE= '".$TITLE."',
-                   DESCRIPTION= '".$DESCRIPTION."'
-				  WHERE ID='".$ID."' ";
+	$sql = "UPDATE `testt_db`.`posts` SET TITLE= '$TITLE',
+                   DESCRIPTION= '$DESCRIPTION'
+				  WHERE ID='$ID' ";
 	if($post_data_query){
 		$json = array("status" => 1, "Success" => "updated successfully!");
 	}
