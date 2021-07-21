@@ -5,9 +5,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 	$ID        = isset($_POST['ID']) ? mysqli_real_escape_string($conn, $_POST['ID']) : "";
 	$TITLE        = isset($_POST['TITLE']) ? mysqli_real_escape_string($conn, $_POST['TITLE']) : "";
 	$DESCRIPTION  = isset($_POST['DESCRIPTION']) ? mysqli_real_escape_string($conn, $_POST['DESCRIPTION']) : "";
-	$DATE  = isset($_POST['DATE']) ? mysqli_real_escape_string($conn, $_POST['DATE']) : "";
+	$DATE_TIME  = isset($_POST['DATE']) ? mysqli_real_escape_string($conn, $_POST['DATE']) : "";
 	// Insert data into database
-	$sql = "INSERT INTO `testt_db`.`posts` ('ID', `TITLE`, `DESCRIPTION`, `DATE_TIME`) VALUES ('$ID','$TITLE','$DESCRIPTION', '$DATE');";
+	$sql = "INSERT INTO `testt_db`.`posts` (ID, TITLE, DESCRIPTION, DATE_TIME) VALUES ('$ID','$TITLE','$DESCRIPTION', '$DATE');";
 	$post_data_query = mysqli_query($conn, $sql);
 	if($post_data_query){
 		$json = array("status" => 1, "Success" => "inserted successfully!");
